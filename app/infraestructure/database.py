@@ -27,7 +27,7 @@ def init_db():
   import app.domain.models.movie
   import app.domain.models.room_feature
   import app.domain.models.room
-  import app.domain.models.seats
+  import app.domain.models.seat
   import app.domain.models.showtime
   import app.domain.models.tag
 
