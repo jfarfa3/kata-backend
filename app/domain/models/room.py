@@ -2,6 +2,8 @@ from sqlalchemy import Column, Integer, String, Table, ForeignKey
 from sqlalchemy.orm import relationship
 from app.domain.models import Base
 from app.domain.associations import room_features_association
+from app.infraestructure.database import Base
+
 class Room(Base):
     __tablename__ = 'rooms'
 

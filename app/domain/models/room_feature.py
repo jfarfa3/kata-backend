@@ -1,4 +1,5 @@
 from sqlalchemy import Column, Integer, String
+from app.infraestructure.database import Base
 
 class RoomFeature(Base):
     __tablename__ = 'room_features'

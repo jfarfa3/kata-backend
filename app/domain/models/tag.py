@@ -1,7 +1,7 @@
 from app.domain.associations import movie_tags
 from sqlalchemy import Column, Integer, String
 from sqlalchemy.orm import relationship
-
+from app.infraestructure.database import Base
 
 class Tag(Base):
   __tablename__ = 'tags'

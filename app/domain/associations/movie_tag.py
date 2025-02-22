@@ -1,5 +1,5 @@
 from sqlalchemy import Table, Column, Integer, ForeignKey
-# from app.domain.models import Base
+from app.infraestructure.database import Base
 
 movie_tags = Table(
   'movie_tags',
