@@ -1,6 +1,7 @@
 from sqlalchemy import Column, Integer, ForeignKey, DateTime
 from sqlalchemy.orm import relationship
 from app.infrastructure.database import Base
+from app.domain.models import Seat
 
 class Showtime(Base):
     __tablename__ = 'showtimes'
@@ -11,4 +12,4 @@ class Showtime(Base):
     end_time = Column(DateTime, nullable=False)
     movie = relationship('Movie', backref='showtimes')
     room = relationship('Room', backref='showtimes')
-    seats = relationship('Seat', backref='showtime')
+    seats = relationship('Seat', backref='showtime', foreign_keys=[Seat.showtime_id])

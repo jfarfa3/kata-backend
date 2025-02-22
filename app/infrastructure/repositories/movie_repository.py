@@ -13,10 +13,9 @@ def create_movie(db: Session, movie: Movie):
     db.refresh(movie)
     return movie
 
-def update_movie(db: Session, movie: Movie):
-    db.query(Movie).filter(Movie.id == movie.id).update(movie)
+def update_movie(db: Session, movie_id: int, movie: Movie):
+    db.query(Movie).filter(Movie.id == movie_id).update(movie.dict())
     db.commit()
-    db.refresh(movie)
     return movie
 
 def delete_movie(db: Session, movie: Movie):
