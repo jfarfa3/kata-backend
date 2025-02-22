@@ -1,6 +1,6 @@
 from sqlalchemy import Column, Integer, String, Enum as SqlEnum, ForeignKey
 from app.domain.enums import SeatType
-from app.infraestructure.database import Base
+from app.infrastructure.database import Base
 
 class Seat(Base):
     __tablename__ = 'seats'

@@ -1,6 +1,6 @@
 from sqlalchemy import Column, Integer, String, Table, ForeignKey
 from sqlalchemy.orm import relationship
-from app.infraestructure.database import Base
+from app.infrastructure.database import Base
 
 room_features_association = Table(
   'room_features_association',

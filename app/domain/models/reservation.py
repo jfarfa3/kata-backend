@@ -1,6 +1,6 @@
 from sqlalchemy import Column, Integer, String, DateTime, ForeignKey
 from sqlalchemy.orm import relationship
-from app.infraestructure.database import Base
+from app.infrastructure.database import Base
 from app.domain.associations import reservation_seats
 
 class Reservation(Base):

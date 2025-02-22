@@ -2,7 +2,7 @@ from sqlalchemy import Column, Integer, String, DateTime, Enum as SqlEnum, Table
 from sqlalchemy.orm import relationship
 from app.domain.enums import MovieFormat
 from app.domain.associations import movie_tags
-from app.infraestructure.database import Base
+from app.infrastructure.database import Base
 
 class Movie(Base):
   __tablename__ = 'movies'

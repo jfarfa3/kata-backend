@@ -1,6 +1,6 @@
 from sqlalchemy import Column, Integer, ForeignKey, DateTime
 from sqlalchemy.orm import relationship
-from app.infraestructure.database import Base
+from app.infrastructure.database import Base
 
 class Showtime(Base):
     __tablename__ = 'showtimes'
