@@ -1,7 +1,6 @@
-from sqlalchemy import Column, Integer, String, Table, ForeignKey
-from sqlalchemy.orm import relationship
-from app.domain.associations import room_features
+from sqlalchemy import Column, Integer, String, ARRAY, JSON
 from app.infrastructure.database import Base
+
 
 class Room(Base):
     __tablename__ = 'rooms'
@@ -10,5 +9,10 @@ class Room(Base):
     name = Column(String, nullable=False)
     capacity = Column(Integer, nullable=False)
     break_time = Column(Integer, nullable=False, default=15)
-    features = relationship('Feature', secondary=room_features, backref='rooms')
-    seats = relationship('Seat', backref='room')
+    seats = Column(ARRAY(JSON), nullable=False, default=[])
+
+    def __str__(self):
+        return f"Room(id={self.id}, name='{self.name}', capacity={self.capacity}, break_time={self.break_time})"
+
+    def __repr__(self):
+        return self.__str__()

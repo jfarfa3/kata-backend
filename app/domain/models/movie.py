@@ -1,7 +1,5 @@
-from sqlalchemy import Column, Integer, String, DateTime, Enum as SqlEnum, Table, ForeignKey
-from sqlalchemy.orm import relationship
+from sqlalchemy import Column, Integer, String, Enum as SqlEnum
 from app.domain.enums import MovieFormat
-from app.domain.associations import movie_tags
 from app.infrastructure.database import Base
 
 class Movie(Base):
@@ -12,4 +10,9 @@ class Movie(Base):
   duration = Column(Integer, nullable=False)
   classification = Column(String, nullable=False)
   format = Column(SqlEnum(MovieFormat), nullable=False)
-  tags = relationship('Tag', secondary=movie_tags, back_populates='movies')
+
+  def __str__(self):
+    return f"Movie(id={self.id}, title='{self.title}', genre='{self.genre}', duration={self.duration}, classification='{self.classification}', format='{self.format}')"
+
+  def __repr__(self):
+      return self.__str__()

@@ -12,3 +12,9 @@ class SeatType(str, Enum):
     VIP = 'VIP'
     COUPLE = 'Couple'
     ACCESSIBLE = 'Accessible'
+    
+class ReservationState(str, Enum):
+    PENDING = 'pending'
+    CREATED = 'created'
+    CONFIRMED = 'confirmed'
+    CANCELLED = 'cancelled'

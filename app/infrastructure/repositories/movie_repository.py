@@ -1,5 +1,8 @@
+import logging
 from sqlalchemy.orm import Session
 from app.domain.models import Movie
+
+logger = logging.getLogger('uvicorn.error')
 
 def get_all_movies(db: Session):
     return db.query(Movie).all()
@@ -14,12 +17,23 @@ def create_movie(db: Session, movie: Movie):
     return movie
 
 def update_movie(db: Session, movie_id: int, movie: Movie):
-    db.query(Movie).filter(Movie.id == movie_id).update(movie.dict())
-    db.commit()
+    try:
+        db.query(Movie).filter(Movie.id == movie_id).update(movie.dict())
+        db.commit()
+    except Exception as e:
+        raise e
     return movie
 
-def delete_movie(db: Session, movie: Movie):
-    db.delete(movie)
-    db.commit()
-    return movie
+def delete_movie(db: Session, movie_id: int):
+    try:
+        room = db.query(Movie).filter(Movie.id == movie_id).first()
+        if not room:
+            return None        
+        db.delete(room)
+        db.commit()
+        return room
+        
+    except Exception as e:
+        db.rollback()
+        raise e
 
