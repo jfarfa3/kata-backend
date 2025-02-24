@@ -6,7 +6,6 @@ from app.domain.models.movie import Movie
 from datetime import datetime
 import os
 
-# Configurar el logger
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
@@ -97,7 +96,7 @@ def send_email(recipient, subject, html_content):
         "from": mail_from,
         "to": recipient,
         "subject": subject,
-        "html": html_content,  # Contenido HTML directo
+        "html": html_content,
     }
 
     logger.info(f"Enviando email a {recipient[0]['email']}")

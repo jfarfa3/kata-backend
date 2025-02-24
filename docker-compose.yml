@@ -13,7 +13,6 @@ services:
     container_name: cinema-postgres-db
 
   backend:
-    # crear la imagen desde docker/dockerfile
     build:
       context: .
       dockerfile: docker/Dockerfile

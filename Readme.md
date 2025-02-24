@@ -8,8 +8,12 @@ Este proyecto es un sistema de gestión de reservas para un cine, desarrollado c
 
 - Docker
 - Docker Compose
+- Python 3.9+
+- pip
 
 ## Instrucciones de Arranque
+
+### Usando Docker
 
 1. Clonar el repositorio:
 
@@ -32,6 +36,43 @@ Este proyecto es un sistema de gestión de reservas para un cine, desarrollado c
     ```
 
 4. La aplicación estará disponible en `http://localhost:8080`.
+
+### Usando Python directamente
+
+1. Clonar el repositorio:
+
+    ```sh
+    git clone <URL_DEL_REPOSITORIO>
+    cd middle-cloud-challenge-2/backend
+    ```
+
+2. Crear un entorno virtual y activarlo:
+
+    ```sh
+    python -m venv venv
+    source venv/bin/activate  # En Windows: venv\Scripts\activate
+    ```
+
+3. Instalar las dependencias:
+
+    ```sh
+    pip install -r requirements.txt
+    ```
+
+4. Crear un archivo `.env` en el directorio `backend` con las siguientes variables de entorno:
+
+    ```env
+    DATABASE_URL=postgres://postgres:password@localhost:5436/postgres
+    MAILERSEND_API_KEY=your_mailersend_api_key
+    ```
+
+5. Iniciar la aplicación:
+
+    ```sh
+    uvicorn app.main:app --host 0.0.0.0 --port 8080
+    ```
+
+6. La aplicación estará disponible en `http://localhost:8080`.
 
 ## Endpoints
 
