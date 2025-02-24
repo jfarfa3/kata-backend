@@ -69,7 +69,7 @@ Este proyecto es un sistema de gestión de reservas para un cine, desarrollado c
 5. Iniciar la aplicación:
 
     ```sh
-    uvicorn app.main:app --host 0.0.0.0 --port 8080
+    fastapi dev app/main.py --reload
     ```
 
 6. La aplicación estará disponible en `http://localhost:8080`.
