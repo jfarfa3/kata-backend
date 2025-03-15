@@ -4,7 +4,8 @@ metadata:
   name: kata-backend
   annotations:
     github.com/project-slug: jfarfa3/kata-backend
+    backstage.io/techdocs-ref: dir:.
 spec:
   type: backend
   lifecycle: production
-  owner: guests
+  owner: backend-team
