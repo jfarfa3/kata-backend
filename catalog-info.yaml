@@ -5,6 +5,16 @@ metadata:
   annotations:
     github.com/project-slug: jfarfa3/kata-backend
     backstage.io/techdocs-ref: dir:.
+  links:
+    - url: https://backend.example.com
+      title: Backend Dashboard
+      icon: dashboard
+    - url: https://backend.logs.example.com
+      title: Backend Logs
+      icon: cloud
+    - url: https://backend.docs.example.com
+      title: Backend Docs
+      icon: book
 spec:
   type: backend
   lifecycle: production
