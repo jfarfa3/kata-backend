@@ -5,6 +5,12 @@ metadata:
   annotations:
     github.com/project-slug: jfarfa3/kata-backend
     backstage.io/techdocs-ref: dir:.
+  tags:
+    - backend
+    - golang
+    - fiber
+    - postgresql
+    - graphql
   links:
     - url: https://backend.example.com
       title: Backend Dashboard
